@@ -38,13 +38,36 @@
 }
 
 .done{
+  display: flex;
   background-color: greenyellow;
- display: flex;
  gap: 25px;
+ border-radius: 40px;
+ width: 400px;
+ justify-content: space-around;
 }
 .not-done{
   background-color: red;
-
+  border-radius: 40px;
+  width: 400px;
   display: flex;
+  justify-content: space-around;
   gap: 25px;
+
  }
+ .task{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+ }
+ .update{
+  background-color: #282c34;
+ }
+ button{
+border-radius: 25px;
+width: 70px;
+height: 30px;
+border: none;
+}
+.list{
+margin-bottom: 20px;
+}

@@ -9,7 +9,7 @@ const ListTask = () => {
     <>
 
       {tasks.map((el, i) => (
-        <div key={i} style={{ backgroundColor: el.done ? "#32CD32" : "#FF0000" }}>
+        <div key={i} className='list'>
           <Task task={el} />
         </div>
       ))}

@@ -9,21 +9,26 @@ const Task = ({ task }) => {
   return (
     <>
       {onUpdate ?
-      <>
+      <div className='update'>
       <input type="text" defaultValue={task.name} onChange={(e) => setNewtask({ ...newtask, name: e.target.value })}></input>
-      <button onClick={()=>{
+      {' '}<button
+       onClick={()=>{
         dispatch(updateTask(newtask))
         setOnUpdate(false)
-      }}>Confirm</button>
+      }}>Confirm</button >{' '}
       <button onClick={()=>setOnUpdate(false)}>Cancel</button> 
-      </>
-      : <div className={task.done ? 'done' : 'not-done'} onClick={() => dispatch(updateTask({...newtask,done:!task.done}))} >
+      </div>
+      : 
+      <div className='task'>
+      <div className={task.done ? 'done' : 'not-done'} onClick={() => dispatch(updateTask({...newtask,done:!task.done}))} >
         <h3>{task.id}</h3>
         <h3>{task.name}</h3>
         <h3>{task.done ? "Done" : "Not Yet"}</h3>
-        <button onClick={()=>setOnUpdate(true)}>Update</button>
-        <button onClick={()=>dispatch(deleteTask(task))}>X</button>
-      </div>}
+      </div>
+     <button onClick={()=>setOnUpdate(true)}>Update</button>
+      <button onClick={()=>dispatch(deleteTask(task))}>X</button>
+      </div>
+      }
     </>
   )
 }
