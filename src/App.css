@@ -37,7 +37,14 @@
   }
 }
 
-.task{
+.done{
+  background-color: greenyellow;
  display: flex;
  gap: 25px;
 }
+.not-done{
+  background-color: red;
+
+  display: flex;
+  gap: 25px;
+ }

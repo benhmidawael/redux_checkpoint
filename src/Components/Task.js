@@ -17,7 +17,7 @@ const Task = ({ task }) => {
       }}>Confirm</button>
       <button onClick={()=>setOnUpdate(false)}>Cancel</button> 
       </>
-      : <div className='task'>
+      : <div className={task.done ? 'done' : 'not-done'} onClick={() => dispatch(updateTask({...newtask,done:!task.done}))} >
         <h3>{task.id}</h3>
         <h3>{task.name}</h3>
         <h3>{task.done ? "Done" : "Not Yet"}</h3>
